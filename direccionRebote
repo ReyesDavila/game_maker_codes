@@ -1,0 +1,14 @@
+function direccionRebote(direccion_pelota, direccion_pared) {
+// Convierte los ángulos de grados a radianes para facilitar los cálculos
+radianes_pelota = direccion_pelota * (pi / 180);
+radianes_pared = direccion_pared * (pi/ 180);
+// Calcula el ángulo relativo entre la dirección de la pelota y la pared
+angulo_relativo = radianes_pared - radianes_pelota;
+// Calcula el ángulo de rebote sumando el doble del ángulo relativo al ángulo de la pared
+angulo_rebote = radianes_pared + angulo_relativo;
+// Convierte el ángulo de rebote de radianes a grados
+grados_rebote = angulo_rebote * (180 / pi);
+// Asegura que el resultado esté en el rango de 0 a 360 grados
+resultado_final = (grados_rebote mod 360 + 360) mod 360;
+return resultado_final;
+}
